@@ -13,9 +13,15 @@ TEMPLATE = app
 
 
 SOURCES += src/main.cpp\
-        src/mainwindow.cpp
+        src/mainwindow.cpp \
+    src/neuralnetwork.cpp \
+    src/neuron.cpp \
+    src/utilities.cpp
 
-HEADERS  += include/mainwindow.hpp
+HEADERS  += include/mainwindow.hpp \
+    include/neuralnetwork.hpp \
+    include/neuron.hpp \
+    include/utilities.hpp
 
 FORMS    += forms/mainwindow.ui
 
