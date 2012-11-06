@@ -153,9 +153,9 @@
                 <enum>QFormLayout::DontWrapRows</enum>
                </property>
                <item row="0" column="0">
-                <widget class="QLabel" name="inputNeuronsLabel">
+                <widget class="QLabel" name="inputSignalsLabel">
                  <property name="text">
-                  <string>Input Neurons</string>
+                  <string>Input Signals</string>
                  </property>
                 </widget>
                </item>
@@ -174,7 +174,7 @@
                 </widget>
                </item>
                <item row="0" column="1">
-                <widget class="QSpinBox" name="inputNeuronsSpinBox">
+                <widget class="QSpinBox" name="inputSignalsSpinBox">
                  <property name="minimum">
                   <number>1</number>
                  </property>
@@ -236,7 +236,7 @@
                   <double>0.050000000000000</double>
                  </property>
                  <property name="value">
-                  <double>0.400000000000000</double>
+                  <double>0.200000000000000</double>
                  </property>
                 </widget>
                </item>
@@ -256,12 +256,15 @@
                   <double>0.050000000000000</double>
                  </property>
                  <property name="value">
-                  <double>0.400000000000000</double>
+                  <double>0.050000000000000</double>
                  </property>
                 </widget>
                </item>
                <item row="2" column="0" colspan="2">
                 <widget class="QCheckBox" name="multithreadingCheckBox">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
                  <property name="text">
                   <string>Multithreading</string>
                  </property>
@@ -386,7 +389,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QStackedWidget" name="stackedWidget_2">
+                 <widget class="QStackedWidget" name="trainStackedWidget">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -644,5 +647,93 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>trainStopButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onTrainStopButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>408</x>
+     <y>584</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1007</x>
+     <y>578</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>layersSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onLayersSpinBoxValueChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>424</x>
+     <y>93</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1006</x>
+     <y>89</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>inputSignalsSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onInputSignalsSpinBoxValueChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>413</x>
+     <y>51</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>499</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>testButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onTestButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>677</x>
+     <y>574</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1007</x>
+     <y>610</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>loadButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onLoadFromFileButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>189</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1006</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onTrainStopButtonClicked()</slot>
+  <slot>onLayersSpinBoxValueChanged(int)</slot>
+  <slot>onInputSignalsSpinBoxValueChanged(int)</slot>
+  <slot>onTestButtonClicked()</slot>
+  <slot>onLoadFromFileButtonClicked()</slot>
+ </slots>
 </ui>
